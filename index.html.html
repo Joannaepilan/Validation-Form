@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Signup Form</title>
+                <link rel="stylesheet" href="css/bootstrap.min.css">
+                    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="box">
+        <h1>Validation Form</h1>
+        <form id="validationForm">
+            <div class="form-group">
+                <label for="fullName">Full Name:</label><br>
+                <input type="text" id="fullname" name="fullname" class="form-control" value="Joanna Vilarmino" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nickname">Nickname:</label><br>
+                <input type="text" id="nickname" name="nickname" class="form-control" value="Wanna" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address:</label><br>
+                <input type="text" id="address" name="address" class="form-control" value="#98 Caimito St., Pinagbuhatan, Cent. 2, Pasig City" required>
+            </div>
+
+            <div class="form-group">
+                <label for="birthday">Birthday:</label><br>
+                <input type="date" id="birthday" name="birthday" class="form-control" value="2004-10-23" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contactNo">Contact No:</label><br>
+                <input type="tel" id="contactNo" name="contactNo" class="form-control" value="09936011734" required>
+            </div>
+
+            <div class="form-group">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" class="form-control" value="Vilarmino_Joanna" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" class="form-control" value="nanaepilan@gmail.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" class="form-control" value="Wann@123!" required><br>
+                <input type="button" class="btn btn-primary" value="Submit" onClick="handleSubmit()">
+            </div>
+        </form>
+    </div>
+        <div id="target"></div>
+</div>
+    <script>
+        var profiles = [];
+             function handleSubmit() {
+                var fullname = document.getElementById("fullname").value;
+                var nickname = document.getElementById("nickname").value;
+                var address = document.getElementById("address").value;
+                var birthday = document.getElementById("birthday").value;
+                var contactNo = document.getElementById("contactNo").value;
+                var username = document.getElementById("username").value;
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+
+        var profile = {
+                "fullname": fullname,
+                "nickname": nickname,
+                "address": address,
+                "birthday": birthday,
+                "contactNo": contactNo,
+                "username": username,
+                "email": email,
+                "password": password
+};
+    profiles.push(profile);
+    console.log(profiles);
+    document.getElementById("target").innerHTML = JSON.stringify(profiles, null, 2);
+}
+            var profiles = [];
+                function handleSubmit() {
+                if (validateForm()) {
+                var fullname = document.getElementById("fullname").value;
+                var nickname = document.getElementById("nickname").value;
+                var address = document.getElementById("address").value;
+                var birthday = document.getElementById("birthday").value;
+                var contactNo = document.getElementById("contactNo").value;
+                var username = document.getElementById("username").value;
+                var email = document.getElementById("email").value;
+                var password = document.getElementById("password").value;
+
+            var profile = {
+                "fullname": fullname,
+                "nickname": nickname,
+                "address": address,
+                "birthday": birthday,
+                "contactNo": contactNo,
+                "username": username,
+                "email": email,
+                "password": password
+};
+    profiles.push(profile);
+        console.log(profiles);
+        document.getElementById("target").innerHTML = JSON.stringify(profiles, null, 2);
+        return true; // Allow form submission
+        } else {
+        return false; // Prevent form submission
+    }
+}
+
+    function validateForm() {
+        var fullname = document.getElementById("fullname").value;
+        var nickname = document.getElementById("nickname").value;
+        var address = document.getElementById("address").value;
+        var birthday = document.getElementById("birthday").value;
+        var contactNo = document.getElementById("contactNo").value;
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        if (fullname === "" || nickname === "" || address === "" || birthday === "" || contactNo === "" || username === "" || email === "" || password === "") {
+            alert("All fields must be filled out");
+            return false;
+        }
+
+        return true;
+    }
+        </script>
+</body>
+</html>
