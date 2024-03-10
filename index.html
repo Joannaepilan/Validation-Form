@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Signup Form</title>
+            <title>Validation Form</title>
                 <link rel="stylesheet" href="css/bootstrap.min.css">
                     <script src="js/bootstrap.min.js"></script>
 </head>
@@ -58,41 +58,19 @@
 </div>
     <script>
         var profiles = [];
-             function handleSubmit() {
-                var fullname = document.getElementById("fullname").value;
-                var nickname = document.getElementById("nickname").value;
-                var address = document.getElementById("address").value;
-                var birthday = document.getElementById("birthday").value;
-                var contactNo = document.getElementById("contactNo").value;
-                var username = document.getElementById("username").value;
-                var email = document.getElementById("email").value;
-                var password = document.getElementById("password").value;
 
-        var profile = {
-                "fullname": fullname,
-                "nickname": nickname,
-                "address": address,
-                "birthday": birthday,
-                "contactNo": contactNo,
-                "username": username,
-                "email": email,
-                "password": password
-};
-    profiles.push(profile);
-    console.log(profiles);
-    document.getElementById("target").innerHTML = JSON.stringify(profiles, null, 2);
-}
-            var profiles = [];
-                function handleSubmit() {
-                if (validateForm()) {
-                var fullname = document.getElementById("fullname").value;
-                var nickname = document.getElementById("nickname").value;
-                var address = document.getElementById("address").value;
-                var birthday = document.getElementById("birthday").value;
-                var contactNo = document.getElementById("contactNo").value;
-                var username = document.getElementById("username").value;
-                var email = document.getElementById("email").value;
-                var password = document.getElementById("password").value;
+        function handleSubmit() {
+
+            validateForm();
+            
+            var fullname = document.getElementById("fullname").value;
+            var nickname = document.getElementById("nickname").value;
+            var address = document.getElementById("address").value;
+            var birthday = document.getElementById("birthday").value;
+            var contactNo = document.getElementById("contactNo").value;
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
 
             var profile = {
                 "fullname": fullname,
@@ -103,15 +81,12 @@
                 "username": username,
                 "email": email,
                 "password": password
-};
-    profiles.push(profile);
-        console.log(profiles);
-        document.getElementById("target").innerHTML = JSON.stringify(profiles, null, 2);
-        return true; // Allow form submission
-        } else {
-        return false; // Prevent form submission
-    }
-}
+            }
+            profiles.push(profile);
+            console.log(profiles);
+            document.getElementById("target").innerHTML = JSON.stringify(profiles, null, 2);
+        }
+
 
     function validateForm() {
         var fullname = document.getElementById("fullname").value;
@@ -128,8 +103,7 @@
             return false;
         }
 
-        return true;
     }
-        </script>
+</script>
 </body>
 </html>
